@@ -1,0 +1,16 @@
+﻿@model   IEnumerable<kurs.Models.Kontragent>
+    @{
+        ViewBag.Title = "Контрагенты";
+    }
+    <a class="btn btn-light m-1" asp-action="Create" >Добавить контрагента</a>
+    <table class="table">
+        <tr><td>Наименование</td></tr>
+        @foreach (var item in Model)
+        {
+            <tr><td>@item.NameContragent</td></tr>
+        }
+    </table>
+
+
+
+

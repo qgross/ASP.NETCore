@@ -1,0 +1,18 @@
+﻿@model kurs.Models.Kontragent
+
+<h2 class="display-4">Регистрация нового контрагента</h2>
+<form method="post" asp-controller="Kontragent" asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label for="formGroupExampleInput" asp-for="NameContragent"></label><br />
+        <input type="text" class="form-control" asp-for="NameContragent" />
+        <span asp-validation-for="NameContragent"></span>
+    </div>
+
+
+    <div>
+        <input class="btn btn-light m-1" type="submit" value="Добавить" />
+    </div>
+</form>
+
+

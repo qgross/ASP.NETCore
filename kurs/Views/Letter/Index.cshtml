@@ -1,0 +1,58 @@
+﻿@model IEnumerable<kurs.Models.Letter>
+
+@{
+    ViewBag.Title = "Все письма";
+}
+
+<a  class="btn btn-light m-1" asp-action="Create">Добавить письмо</a>
+
+
+@*<table class="table">
+    <tr><td>Наименование</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Number</td>><td>@item.Date</td><td>@item.FormSec</td><td>@Html.DisplayNameFor(model => model.Kontragent.NameContragent)</td></tr>
+    }
+</table>*@
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+               Номер 
+            </th>
+            <th>
+                Дата 
+            </th>
+            <th>
+               Форма секретности
+            </th>
+            <th>
+                Контрагент
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormSec)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontragent.NameContragent)
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+

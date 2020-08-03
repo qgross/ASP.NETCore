@@ -1,0 +1,34 @@
+﻿@model kurs.ViewModels.RegisterViewModel
+<h2 class="display-4">Регистрация нового пользователя</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label for="exampleInputEmail1" asp-for="Email"></label><br />
+        <input type="email" class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label for="exampleInputEmail1" asp-for="Name"></label><br />
+        <input type="email" class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label  for="exampleInputEmail1" asp-for="Surname"></label><br />
+        <input type="email" class="form-control" asp-for="Surname" />
+        <span asp-validation-for="Surname"></span>
+    </div>
+    <div>
+        <label for="exampleInputPassword1" asp-for="Password"></label><br />
+        <input type="password" class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label for="exampleInputPassword1" asp-for="PasswordConfirm"></label><br />
+        <input type="password" class="form-control" asp-for="PasswordConfirm" />
+        <span asp-validation-for="PasswordConfirm"></span>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-light m-1" value="Регистрация" />
+    </div>
+</form>
+

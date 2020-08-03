@@ -1,0 +1,43 @@
+﻿@model kurs.Models.Letter 
+<h2 class="display-4">Регистрация нового письма</h2>
+<form method="post" asp-controller="Letter" asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label  for="formGroupExampleInput" asp-for="Number"></label><br />
+        <input  type="text" class="form-control" asp-for="Number" />
+        <span asp-validation-for="Number"></span>
+    </div>
+    <div>
+        <label for="formGroupExampleInput" asp-for="Date"></label><br />
+        <input data-provide="datepicker" asp-for="Date" />
+        <span asp-validation-for="Date"></span>
+    </div>
+    <div>
+        <label for="formGroupExampleInput" asp-for="Type"></label><br />
+        <input  type="text" class="form-control" asp-for="Type" />
+        <span asp-validation-for="Type"></span>
+    </div>
+    <div>
+        <label for="formGroupExampleInput" asp-for="FormSec"></label><br />
+        <input  type="text" class="form-control" asp-for="FormSec" />
+        <span asp-validation-for="FormSec"></span>
+    </div>
+  
+        @*<p>
+            KontragentId <br />
+            @Html.DropDownListFor(model => model.Kontragent, ViewBag.Kontragents as SelectList)
+
+        </p>*@
+        <div class="form-group">
+            <label asp-for="Kontragent" class="control-label"></label>
+            <select asp-for="KontragentId" class="form-control" asp-items="ViewBag.KontragentId">
+                <option value="">-- Выбор Контрагента --</option>
+            </select>
+            <span asp-validation-for="KontragentId" class="text-danger" />
+        </div>
+    
+        <input class="btn btn-light m-1" type="submit" value="Добавить" />
+    
+</form>
+
+

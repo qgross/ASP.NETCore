@@ -1,0 +1,26 @@
+﻿@model kurs.ViewModels.LoginViewModel
+<h2 class="display-4">Вход в приложение</h2>
+<form method="post" asp-controller="Account" asp-action="Login"
+      asp-route-returnUrl="@Model.ReturnUrl">
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label for="exampleInputEmail1" asp-for="Email"></label><br />
+            <input type="email" class="form-control" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label for="exampleInputPassword1" asp-for="Password"></label><br />
+            <input type="password" class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label for="exampleInputPassword1" asp-for="RememberMe"></label><br />
+            <input type="password" class="form-control" asp-for="RememberMe" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-light m-1" value="Войти" />
+        </div>
+        </div>
+</form>
